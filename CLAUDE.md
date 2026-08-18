@@ -58,6 +58,17 @@ lệnh. Các nguyên tắc sau có hiệu lực cao nhất, áp dụng cho mọi
   LFS.
 - Nếu có remote (GitHub riêng tư) — chỉ push khi người dùng xác nhận rõ trong chat.
 
+## Lỗi & bài học rút ra (tự ghi, không cần đợi nhắc)
+Mỗi khi phát hiện mình đã sai, làm lỗi, hoặc phát hiện một điều quan trọng dễ lặp lại nếu không
+ghi nhớ (gotcha kỹ thuật, giả định sai, quy trình đi sai hướng...) — **tự thêm ngay 1 dòng vào
+đây trong cùng phiên đó**, không chờ người dùng nhắc. Chỉ ghi bài học có thể lặp lại trong tương
+lai (không ghi diễn biến công việc thông thường — việc đó thuộc `CHANGELOG.md`). Giữ mỗi mục
+ngắn 1-2 dòng để tránh phình to file. Format: `- [ngày] Bài học — vì sao / áp dụng khi nào.`
+
+- [2026-08-18] Dự án cũ không có git/backup nên mất gần hết dữ liệu khi cài lại Windows — luôn
+  thiết lập git + remote GitHub riêng tư ngay từ commit đầu tiên của một dự án mới, không để "làm
+  sau".
+
 ## Việc đầu tiên khi bắt đầu một phiên làm việc
 1. Đọc `CLAUDE.md` (file này).
 2. Kiểm tra `PROJECT_STATUS.md` (sẽ tạo khi bắt đầu Phase 0 thật) để biết đang ở phase nào.
