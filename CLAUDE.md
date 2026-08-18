@@ -86,25 +86,42 @@ ngắn 1-2 dòng để tránh phình to file. Format: `- [ngày] Bài học — 
 
 ## Việc đầu tiên khi bắt đầu một phiên làm việc
 1. Đọc `CLAUDE.md` (file này).
-2. Kiểm tra `PROJECT_STATUS.md` (sẽ tạo khi bắt đầu Phase 0 thật) để biết đang ở phase nào.
-3. Nếu các file quy chuẩn dùng chung chưa tồn tại (`PROJECT_GUIDE.md`, `RESEARCH_PROTOCOL.md`,
-   `LITERATURE_RULES.md`, `WRITING_GUIDELINES.md`, `CITATION_POLICY.md`, `FILE_STRUCTURE.md`) —
-   **không giả định nội dung của chúng**, hỏi người dùng hoặc đề xuất soạn mới.
-4. Chỉ hỗ trợ đúng phase hiện tại, không tự ý làm trước công việc của phase kế tiếp trừ khi
-   người dùng chủ động yêu cầu.
-5. Sau khi hoàn thành một mốc quan trọng: cập nhật `PROJECT_STATUS.md`, ghi vào `CHANGELOG.md`
-   (nếu dự án dùng lại quy ước này), và **commit git**.
+2. Đọc `PROJECT_GUIDE.md` — bối cảnh, mục tiêu, phạm vi, nhóm thực hiện.
+3. Kiểm tra `PROJECT_STATUS.md` để biết đang ở bước hành chính/giai đoạn kỹ thuật nào — **đọc kỹ
+   mục cảnh báo mốc thời gian đầu file, còn rất ít thời gian tới hạn gốc**.
+4. Nếu công việc liên quan trích dẫn/viết báo cáo → đọc `CITATION_POLICY.md` và
+   `WRITING_GUIDELINES.md` trước. `LITERATURE_RULES.md` (quy trình lược khảo 12 bước của bản cũ)
+   **chưa được dựng lại** — nếu cần, hỏi người dùng hoặc đề xuất soạn mới dựa trên kinh nghiệm thực
+   tế, không giả định nội dung cũ.
+5. Nếu tạo/di chuyển file → tuân theo `FILE_STRUCTURE.md`.
+6. Chỉ hỗ trợ đúng bước/giai đoạn hiện tại, không tự ý làm trước công việc của giai đoạn kế tiếp
+   trừ khi người dùng chủ động yêu cầu.
+7. Sau khi hoàn thành một mốc quan trọng: cập nhật `PROJECT_STATUS.md`, ghi vào `CHANGELOG.md`
+   (chưa được tạo lại — tạo khi có mốc đầu tiên cần ghi), và **commit git**.
 
 ## Thay đổi phạm vi
 Mọi thay đổi phạm vi so với Thuyết minh gốc (VD: thêm OPC UA/Telegram, PROFINET I-Device) phải:
 1. Có xác nhận của GVHD bằng văn bản (email/biên bản) — không chỉ trao đổi miệng.
 2. Được ghi lại rõ ràng vào `PROJECT_STATUS.md` kèm ngày và nguồn xác nhận.
 
-## Bản đồ thư mục (cập nhật khi cấu trúc thay đổi)
+## Bản đồ các file gốc
+| File | Nội dung | Nguồn |
+|---|---|---|
+| `PROJECT_GUIDE.md` | Mô tả toàn bộ đề tài: bối cảnh, mục tiêu, phạm vi, nhóm, tiến độ đăng ký | Thuyết minh gốc, đã đọc trực tiếp |
+| `RESEARCH_PROTOCOL.md` | Snapshot RQ/success criteria lúc duyệt đề cương | Thuyết minh gốc + suy luận có đánh dấu rõ |
+| `PROJECT_STATUS.md` | Tiến độ hành chính (14 bước) + kỹ thuật (5 giai đoạn), tracker sống | QT_Thuchien detaiNCKHSV.pdf + cập nhật tay |
+| `CITATION_POLICY.md` | Ngưỡng trùng lặp, nghĩa vụ khai báo AI, cách trích dẫn, danh mục 9 TLTK | Quy định Liêm chính học thuật + Quy định trình bày hội thảo |
+| `WRITING_GUIDELINES.md` | Văn phong, định dạng — tạm dùng chuẩn hội thảo, chờ Mẫu SV04 thật | Quy định trình bày hội thảo |
+| `FILE_STRUCTURE.md` | Cấu trúc thư mục, quy tắc đặt tên cho file mới | Tự thiết kế dựa trên tên biểu mẫu SV01-SV11 |
+| `LITERATURE_RULES.md` | Quy trình lược khảo tài liệu | **Chưa dựng lại** — tạo khi cần |
+| `CHANGELOG.md` | Nhật ký thay đổi theo ngày | **Chưa dựng lại** — tạo khi có mốc đầu tiên |
+
+## Bản đồ thư mục
 | Đường dẫn | Nội dung | Trạng thái |
 |---|---|---|
 | `NCKH_Sinh_Viên/` | Bản thảo Chương 1–2, danh mục thiết bị, literature matrix (bản cũ) | Cần rà soát lại trước khi dùng tiếp |
 | `NCKH_khoi_phuc/` | Log/ghi chú dựng lại từ trí nhớ hội thoại (không phải file gốc) | Chỉ tham khảo |
-| `DTSV2025-27 TM_NCHuong_ThS.LQKhuong hd.pdf` | Thuyết minh gốc đã duyệt chính thức | Chính thức, giữ nguyên |
+| `NCKH_Van_ban_trong_truong/` | Văn bản quy định chính thức của trường (11 PDF) | Chính thức, đã đọc 3/11 file quan trọng nhất |
+| `DTSV2025-27 TM_NCHuong_ThS.LQKhuong hd.pdf` | Thuyết minh gốc đã duyệt chính thức | Chính thức, giữ nguyên, đã đọc toàn văn |
 
-*Cập nhật lần cuối: 2026-08-18 — khởi tạo lại dự án, chuyển sang quản lý bằng git.*
+*Cập nhật lần cuối: 2026-08-18 — dựng lại 5 file quy chuẩn dựa trên văn bản gốc đã đọc trực tiếp.*
