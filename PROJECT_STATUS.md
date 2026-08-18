@@ -52,10 +52,29 @@ Còn 2 vấn đề kỹ thuật thật đang chặn tiến độ — xem mục R
 khác nếu còn...) chưa được đối chiếu đầy đủ — cần chủ nhiệm và các thành viên tiếp tục xác nhận,
 không tự suy đoán thêm ngoài những gì đã báo ở trên.
 
+## Checklist việc cần bổ sung (dựng 2026-08-18, đối chiếu khi có tiến triển)
+Cấu trúc thư mục mục tiêu đã tạo đủ (xem `FILE_STRUCTURE.md`), mỗi thư mục có `README.md` liệt kê
+chi tiết phần thiếu — đây là bản tóm tắt để dễ quét nhanh:
+
+| Thư mục | Đã có | Đang thiếu — cần bạn | Đang thiếu — Claude đã/có thể tự tìm |
+|---|---|---|---|
+| `01_Research_Protocol/00_Trao_doi_GVHD/` | — | Biên bản gia hạn (SV05) thật | — |
+| `03_System_Design/` | Sơ đồ cũ (chưa xác minh) | Xác nhận lại sơ đồ + cập nhật fix E-Stop | — |
+| `04_Hardware/01_hinh_anh_thiet_bi/` | — | **Toàn bộ ảnh tem máy thiết bị thật** (không tìm trên web được) | — |
+| `05_Simulation/` | — | Xác định đúng project TIA Portal thật trong `D:\project tia portal\`, code PLC xử lý E-Stop | — |
+| `06_Experiment/` | — | Bộ tiêu chí định lượng (cần GVHD duyệt), dữ liệu đo thực nghiệm | — |
+| `08_BaoCao/` | Chương 1-2 cũ (cần rà lại) | Mẫu SV04 thật, Chương 3 trở đi | — |
+| `References/pdf/` | — | — | 9 tài liệu tham khảo học thuật [1]-[9] (cần tự tra cứu kỹ vì có tiền sử sai lệch) |
+| `References/pdf/manuals_thiet_bi/` | ✅ VNZ100 (chưa chắc đúng model), Selec MFM383A-C | Xác nhận model VFD qua tem máy | Siemens S7-1200 (link có, tải tay) |
+
+**Model chưa chốt — không thể tìm trên web vì chưa biết tìm gì:** HMI, bộ chuyển đổi PT100,
+contactor, rơ-le nhiệt, Aptomat, relay trung gian, bộ nguồn 24VDC, E-Stop, động cơ (hãng cụ thể).
+Đây đều là việc chỉ chủ nhiệm/nhóm làm được (đọc tem máy, hoặc quyết định mua nếu chưa có).
+
 ## Việc đang làm (cập nhật liên tục)
-- **[2026-08-18]** Dựng lại toàn bộ file quy chuẩn dự án (`PROJECT_GUIDE.md`, `RESEARCH_PROTOCOL.md`,
-  `PROJECT_STATUS.md` — file này, đang dựng tiếp `CITATION_POLICY.md`, `FILE_STRUCTURE.md`) dựa trên
-  văn bản gốc đã đọc trực tiếp, sau sự cố mất dữ liệu do cài lại Windows không backup.
+- **[2026-08-18]** Dựng lại toàn bộ file quy chuẩn dự án, tạo cấu trúc thư mục mục tiêu đầy đủ, tự
+  tìm và tải 2/3 manual thiết bị đã xác nhận model (Wecon VFD, Selec MFM383A-C) từ nguồn chính hãng
+  trên web, sau sự cố mất dữ liệu do cài lại Windows không backup.
 
 ## Vướng mắc / Rủi ro
 - **[2026-08-18] 🔴 AN TOÀN — lỗi E-Stop không dừng đúng khi nhả nút:** chủ nhiệm báo hệ thống "không
