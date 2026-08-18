@@ -1,38 +1,64 @@
-Để chuẩn hóa đúng góc nhìn của một kỹ sư Điện công nghiệp, hệ thống của bạn không thể chỉ có PLC, VFD và Động cơ, mà bắt buộc phải có các thiết bị khí cụ điện đóng cắt, bảo vệ và đo lường đi kèm. Đây chính là phần "phần cứng tủ điện" thực tế giúp bài NCKH của bạn không bị lý thuyết suông.
-Dưới đây là phần chốt danh sách các thiết bị khí cụ điện bắt buộc phải có trong hệ thống mini SCADA của bạn, được chia theo đúng chức năng công nghiệp:
-## ⚡ 1. Khí cụ Đóng cắt & Bảo vệ nguồn (Mạch động lực)
+ĐỊNH HƯỚNG MỞ RỘNG PHẠM VI — CHƯA DUYỆT GVHD
+(gộp 2 file người dùng cung cấp 2026-08-18, nội dung do AI khác soạn, chủ nhiệm xác nhận đúng ý
+muốn theo đuổi — xem trạng thái duyệt tại PROJECT_STATUS.md mục "Thay đổi phạm vi đang đề xuất")
 
-* Aptomat (MCCB hoặc MCB 3 pha): Đóng cắt nguồn tổng 3 pha cấp cho tủ điện và biến tần (VFD). Bảo vệ ngắn mạch và quá tải toàn hệ thống.
-* Contactor (Khởi động từ 3 pha): Đứng trước biến tần. Dùng để PLC điều khiển cấp nguồn/ngắt nguồn tổng vào biến tần từ xa (nhằm cách ly biến tần khi có sự cố khẩn cấp).
-* Rơ-le nhiệt (Thermal Overload Relay): Dù biến tần có tính năng bảo vệ quá tải, nhưng trong điện công nghiệp vẫn cần một rơ-le nhiệt vật lý đấu sau biến tần (hoặc mạch chạy bypass trực tiếp không qua biến tần) để bảo vệ động cơ chống cháy khi quá dòng.
+===============================================================
+PHẦN A — KIẾN TRÚC 4 TẦNG (Web SCADA qua Web API tích hợp sẵn của S7-1500)
+===============================================================
 
-## 🛡️ 2. Khí cụ Bảo vệ mạch điều khiển & Thiết bị số
+Sơ đồ tổng quan:
+[Động cơ + VFD] -> [PLC S7-1200 CPU1211C thật] -> [PLC S7-1500 ảo, PLCSIM Advanced] -> [Web SCADA: HTML/CSS/JS]
 
-* MCB 1 pha: Bảo vệ ngắn mạch cho nguồn điều khiển (220VAC) cấp cho PLC và nguồn tổ ong.
-* Nguồn tổ ong (Switching Power Supply 24VDC): Hạ áp từ 220VAC xuống 24VDC để cấp nguồn nuôi cho PLC S7-1200 và các rơ-le trung gian.
-* Rơ-le trung gian (Intermediate Relay 24VDC): Cách ly dòng điện giữa ngõ ra (Output) của PLC và cuộn hút của Contactor hoặc các chân kích dòng lớn của VFD. Nhằm bảo vệ relay/transistor bên trong PLC không bị cháy nếu có sự cố chập mạch động lực.
-* Cầu chì (Fuse): Bảo vệ các đường dây tín hiệu cảm biến hoặc ngõ ra analog yếu.
+Tầng 1 — Động lực & chấp hành: động cơ 3 pha KĐB, biến tần (VFD), cảm biến CT/PT/module đo.
 
-## 📊 3. Khí cụ Đo lường & Thu thập dữ liệu (Nguồn dữ liệu cho API)
+Tầng 2 — Thu thập & điều khiển thực tế: PLC S7-1200 CPU1211C — đọc cảm biến (dòng/áp/tốc độ), xuất
+lệnh điều khiển VFD (chạy/dừng/đảo chiều/tăng-giảm tốc), xử lý logic bảo vệ (quá dòng, quá nhiệt).
 
-* Biến dòng điện (CT - Current Transformer): Hạ dòng điện lớn của động cơ 3 pha xuống dải dòng nhỏ (thường là 0-5A) để đưa vào bộ đo.
-* Đồng hồ đa năng công nghiệp (Digital Power Meter): Nhận tín hiệu từ CT và đo trực tiếp điện áp 3 pha. Đồng hồ này có cổng Modbus RTU (RS485) để PLC S7-1200 đọc dữ liệu dòng, áp, cosφ, công suất (kWh), sau đó đẩy lên PLC 1500 ảo làm API giám sát tiêu thụ năng lượng.
+Tầng 3 — Đồng bộ & cổng dữ liệu trung gian (Edge Gateway / Virtual Twin): máy tính chạy PLCSIM
+Advanced tạo PLC S7-1500 ảo. Truyền thông S7-1200 <-> S7-1500: qua Ethernet, dùng khối lệnh PUT/GET
+hoặc TSEND/TRCV để PLC 1200 thật đẩy dữ liệu thô lên PLC 1500 ảo. S7-1500 ảo đóng vai trò Web API
+Server công nghiệp cho tầng Web SCADA.
 
-## 🚨 4. Khí cụ Điều khiển tại chỗ & Cảnh báo (Giao diện cơ vật lý)
-* Nút dừng khẩn cấp (Emergency Stop - E-Stop): Cắt nguồn cơ học ngay lập tức khi động cơ gặp sự cố nguy hiểm, không đợi lệnh từ phần mềm.
-* Nút nhấn Chạy/Dừng (Start/Stop): Điều khiển động cơ tại chỗ (chế độ Manual phòng khi mất mạng mạng internet hoặc lỗi SCADA).
-* Đèn báo pha (R-S-T) và Đèn báo trạng thái (Run/Fault): Hiển thị trực quan trạng thái nguồn lưới và lỗi của tủ điện.
+Tầng 4 — Giao diện giám sát (Web SCADA): tự viết trang Web bằng HTML/CSS/JavaScript. Cơ chế lấy dữ
+liệu: kích hoạt tính năng Web API có sẵn trên PLC S7-1500 ảo (đây là tính năng chính hãng Siemens,
+không phải server tự viết riêng); trang Web dùng JavaScript (hàm fetch) gửi yêu cầu dạng JSON-RPC
+2.0 (phương thức PlcProgram.Read và PlcProgram.Write) tới địa chỉ IP của PLC ảo để đọc/ghi dữ liệu.
 
-------------------------------
-## 📝 Bảng tổng hợp luồng kết nối khí cụ điện lên SCADA:
+Lộ trình đề xuất (CHƯA xác minh tiến độ thật — xem cảnh báo bên dưới):
+1. Cấu hình PLC S7-1200, tạo PLC S7-1500 ảo trên PLCSIM Advanced, thiết lập truyền thông PUT/GET
+2. Đấu nối PLC S7-1200 với VFD, cài tham số để PLC kích chạy/đổi tốc độ động cơ thật
+3. Bật Web Server + Web API trên S7-1500 ảo, phân quyền User đọc/ghi, tạo DB chuẩn lưu thông số
+4. Viết code Web HTML/JS đọc thử 1 biến (VD tốc độ) từ PLC ảo lên trình duyệt qua API
+5. Hoàn thiện giao diện Web (đồ thị, nút bấm) và viết báo cáo NCKH
 
-| Thiết bị khí cụ | Tín hiệu kết nối về PLC S7-1200 | Trạng thái hiển thị trên Web SCADA qua API |
+⚠️ CẢNH BÁO — file gốc ghi "Bước 1 đã xong 50%" (đã thiết lập PUT/GET giữa 2 PLC mượt mà). Claim này
+CHƯA xác minh được trong phiên hiện tại — phần này rơi đúng vào phạm vi dữ liệu số đã mất (khớp mô
+tả "Test A đã chạy thành công qua PLCSIM Advanced" trong NCKH_khoi_phuc/CHANGELOG.md bổ sung 45,
+cũng chưa xác minh). Không coi là đã hoàn thành cho tới khi tự làm lại và xác nhận trên máy thật.
+
+===============================================================
+PHẦN B — DANH MỤC KHÍ CỤ ĐIỆN (đối chiếu, phần lớn đã xác nhận qua ảnh thật — xem 04_Hardware/)
+===============================================================
+
+1. Đóng cắt & bảo vệ nguồn (mạch động lực): Aptomat 3 pha, Contactor (PLC điều khiển cấp/ngắt
+   nguồn VFD từ xa để cách ly khi khẩn cấp), Rơ-le nhiệt (bảo vệ vật lý độc lập, dù VFD đã có bảo
+   vệ quá tải điện tử riêng).
+2. Bảo vệ mạch điều khiển & thiết bị số: MCB 1 pha (nguồn điều khiển 220VAC), nguồn tổ ong 24VDC
+   (cấp PLC + relay trung gian), relay trung gian 24VDC (cách ly PLC output khỏi cuộn hút
+   Contactor/VFD, bảo vệ PLC khi có sự cố chập mạch động lực), cầu chì cho tín hiệu cảm biến/analog.
+3. Đo lường & thu thập dữ liệu: CT (biến dòng, hạ dòng lớn về dải đo được), đồng hồ đa năng công
+   nghiệp (nhận CT, đo áp/dòng/cosφ/công suất, giao tiếp Modbus RTU/RS485 về PLC).
+4. Điều khiển tại chỗ & cảnh báo: E-Stop (cắt cơ học ngay, không qua phần mềm), nút Start/Stop tại
+   chỗ (chế độ Manual dự phòng khi mất mạng/lỗi SCADA), đèn báo pha R-S-T + đèn báo Run/Fault.
+
+Bảng luồng kết nối lên SCADA:
+| Thiết bị | Tín hiệu về PLC | Hiển thị trên Web SCADA |
 |---|---|---|
-| Tiếp điểm phụ MCCB/MCB | Ngõ vào Digital (DI) | Báo nguồn tủ điện: ON / OFF |
-| Tiếp điểm phụ Contactor | Ngõ vào Digital (DI) | Báo trạng thái cấp nguồn VFD: READY / NOT READY |
-| Tiếp điểm lỗi Rơ-le nhiệt (95-96) | Ngõ vào Digital (DI) | Báo động lỗi hệ thống: OVERLOAD FAULT |
-| Đồng hồ đo điện đa năng | Truyền thông Modbus RTU (Mạng RS485) | Đồ thị: Dòng điện (A), Điện áp (V), Công suất (kW) |
-| Biến tần (VFD) | Analog Out (Tốc độ) / Truyền thông | Hiển thị: Tần số chạy (Hz), Tốc độ thực (RPM) |
+| Tiếp điểm phụ MCCB/MCB | DI | Nguồn tủ điện: ON/OFF |
+| Tiếp điểm phụ Contactor | DI | Trạng thái cấp nguồn VFD: READY/NOT READY |
+| Tiếp điểm lỗi rơ-le nhiệt (95-96) | DI | Báo động: OVERLOAD FAULT |
+| Đồng hồ đo điện | Modbus RTU/RS485 | Đồ thị dòng/áp/công suất |
+| VFD | Analog Out (tốc độ)/truyền thông | Tần số chạy (Hz), tốc độ thực (RPM) |
 
-Bạn hãy ghi chú lại danh sách khí cụ này vào phần "Thiết kế phần cứng hệ thống" trong đề cương NCKH. Khi bạn vẽ sơ đồ nguyên lý tủ điện (mạch động lực và mạch điều khiển), bạn có cần tôi hỗ trợ làm rõ cách đấu nối chân giữa PLC S7-1200 qua Rơ-le trung gian để kích chạy Biến tần không?
-Nếu bạn cần, hãy cho tôi biết:
+*Cập nhật 2026-08-18 — gộp 2 file gốc do người dùng cung cấp, không sửa nội dung kỹ thuật, chỉ thêm
+cảnh báo xác minh và bỏ phần văn phong hội thoại (câu hỏi/đề nghị của AI đã soạn nội dung này).*

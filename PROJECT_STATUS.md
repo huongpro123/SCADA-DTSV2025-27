@@ -13,11 +13,18 @@ luận từ lời kể.
 
 ## 🟡 Thay đổi phạm vi đang đề xuất — CHƯA duyệt GVHD
 **[2026-08-18]** Chủ nhiệm xác nhận muốn theo hướng: **Web SCADA qua API** + **PLC S7-1500 ảo**
-(qua PLCSIM Advanced, đóng vai IO Controller cho CPU S7-1211C thật đóng vai I-Device). Nguồn định
-hướng: `thông_tin_tự_tôi_biên_soạn.txt` (nội dung do AI khác soạn, chủ nhiệm xác nhận đúng ý muốn
-theo). Khớp với hướng "PROFINET I-Device + S7-1500 ảo" từng ghi trong `NCKH_khoi_phuc/CHANGELOG.md`
-bổ sung 45 (nội dung chưa xác minh trước đây) — hai nguồn độc lập trùng hướng, củng cố đây là ý định
-thật của chủ nhiệm từ trước, không phải ý mới nảy sinh.
+(qua PLCSIM Advanced, đóng vai IO Controller cho CPU S7-1211C thật đóng vai I-Device). Đã gộp chi
+tiết cơ chế kỹ thuật vào `03_System_Design/Dinh_huong_mo_rong_WebSCADA_S71500ao_ChuaDuyetGVHD.txt`:
+PLC 1200 thật đẩy dữ liệu lên PLC 1500 ảo qua PUT/GET hoặc TSEND/TRCV, Web SCADA tự viết HTML/JS
+gọi **Web API có sẵn của S7-1500** (JSON-RPC `PlcProgram.Read`/`PlcProgram.Write`) — không phải
+server trung gian tự viết riêng. Khớp với hướng "PROFINET I-Device + S7-1500 ảo" từng ghi trong
+`NCKH_khoi_phuc/CHANGELOG.md` bổ sung 45 (chưa xác minh trước đây) — hai nguồn độc lập trùng hướng,
+củng cố đây là ý định thật của chủ nhiệm từ trước, không phải ý mới nảy sinh.
+
+**⚠️ Chưa xác minh:** tài liệu định hướng ghi "đã thiết lập PUT/GET giữa 2 PLC mượt mà" (bước 1) —
+claim này rơi đúng vào phạm vi dữ liệu số đã mất, khớp mô tả "Test A đã chạy thành công" trong
+`NCKH_khoi_phuc/` (cũng chưa xác minh). Không coi là đã xong cho tới khi tự làm lại và xác nhận trên
+máy thật.
 
 **[Sửa lại 2026-08-18]** Modbus RTU cho đồng hồ đo **KHÔNG phải mở rộng phạm vi** như ghi nhầm lúc
 đầu — đồng hồ Selec MFM383A-C vốn chỉ giao tiếp qua Modbus RTU/RS485 (không có cổng PROFINET), đây
