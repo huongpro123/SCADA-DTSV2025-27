@@ -13,11 +13,18 @@ luận từ lời kể.
 
 ## 🟡 Thay đổi phạm vi đang đề xuất — CHƯA duyệt GVHD
 **[2026-08-18]** Chủ nhiệm xác nhận muốn theo hướng: **Web SCADA qua API** + **PLC S7-1500 ảo**
-(qua PLCSIM Advanced, đóng vai IO Controller cho CPU S7-1211C thật đóng vai I-Device) + đọc đồng hồ
-đo qua **Modbus RTU**. Nguồn định hướng: `thông_tin_tự_tôi_biên_soạn.txt` (nội dung do AI khác soạn,
-chủ nhiệm xác nhận đúng ý muốn theo). Khớp với hướng "PROFINET I-Device + S7-1500 ảo" từng ghi trong
-`NCKH_khoi_phuc/CHANGELOG.md` bổ sung 45 (nội dung chưa xác minh trước đây) — hai nguồn độc lập trùng
-hướng, củng cố đây là ý định thật của chủ nhiệm từ trước, không phải ý mới nảy sinh.
+(qua PLCSIM Advanced, đóng vai IO Controller cho CPU S7-1211C thật đóng vai I-Device). Nguồn định
+hướng: `thông_tin_tự_tôi_biên_soạn.txt` (nội dung do AI khác soạn, chủ nhiệm xác nhận đúng ý muốn
+theo). Khớp với hướng "PROFINET I-Device + S7-1500 ảo" từng ghi trong `NCKH_khoi_phuc/CHANGELOG.md`
+bổ sung 45 (nội dung chưa xác minh trước đây) — hai nguồn độc lập trùng hướng, củng cố đây là ý định
+thật của chủ nhiệm từ trước, không phải ý mới nảy sinh.
+
+**[Sửa lại 2026-08-18]** Modbus RTU cho đồng hồ đo **KHÔNG phải mở rộng phạm vi** như ghi nhầm lúc
+đầu — đồng hồ Selec MFM383A-C vốn chỉ giao tiếp qua Modbus RTU/RS485 (không có cổng PROFINET), đây
+là yêu cầu kỹ thuật bắt buộc đi kèm thiết bị đã chọn đúng theo Thuyết minh, cần module CB 1241
+(chủ nhiệm xác nhận đã có sẵn, xem `NCKH_khoi_phuc/CHANGELOG.md` bổ sung 38 — cần tự xác minh lại
+vật lý). Modbus RTU (tầng field, PLC↔đồng hồ) và PROFINET (tầng điều khiển, PLC↔HMI↔WinCC) tồn tại
+song song bình thường trong kiến trúc SCADA thật — không mâu thuẫn với Thuyết minh.
 
 **Đây LÀ thay đổi phạm vi thật so với Thuyết minh gốc đã ký** (Thuyết minh dùng WinCC + S7
 native/PROFINET cơ bản trên LAN, mục 9.2.1 ghi rõ "KHÔNG nghiên cứu tích hợp giao thức mạng mở rộng
