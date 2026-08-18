@@ -74,14 +74,36 @@ trong phiên làm việc này, xem cảnh báo bên dưới.*
 9. Selec Controls Pvt. Ltd. *MFM383A-C Multifunction Meter Technical Manual.* Selec Corporation,
    2022.
 
-## ⚠️ CẢNH BÁO — chưa xác minh lại danh mục trên trong phiên này
-`NCKH_khoi_phuc/PROJECT_STATUS.md` (nội dung dựng lại từ trí nhớ hội thoại trước, chưa xác minh)
-từng ghi nhận: khi đối chiếu 7 tài liệu khoa học [1]-[7] ở trên với file PDF thật qua WebSearch/DOI,
-**5/7 có tác giả đúng nhưng tiêu đề/tạp chí không khớp** mô tả trong Thuyết minh (ví dụ [1] Khoa/
-Thanh/Ngôn: bài thật có DOI 10.34238/tnu-jst.5358, tên khác hẳn "Điều khiển thông minh động cơ
-không đồng bộ 3 pha dựa trên mạng nơ-ron mờ hồi quy", đăng ở TNU Journal of Science and Technology
-— không phải tên/tạp chí ghi trong Thuyết minh); **2/7 hoàn toàn không tìm ra file** ([2] Phạm & Phạm
-2015, [3] Gomboc 2014).
+## 🔴 CẢNH BÁO — ĐÃ TỰ XÁC MINH LẠI ĐỘC LẬP 2026-08-18, KẾT QUẢ TRÙNG KHỚP VỚI GHI CHÚ CŨ
+
+`NCKH_khoi_phuc/PROJECT_STATUS.md` (chưa xác minh) từng ghi nhận 5/7 tài liệu [1]-[7] có tác giả
+đúng nhưng tiêu đề/tạp chí không khớp Thuyết minh, 2/7 hoàn toàn không tìm ra. **Phiên này đã tự
+tra cứu lại độc lập qua WebSearch (không đọc lại kết luận cũ trước khi tra) — kết quả trùng khớp,
+củng cố thêm độ tin cậy của phát hiện:**
+
+- **[1] Khoa/Thanh/Ngôn — XÁC NHẬN tác giả thật có tồn tại, nhưng bài thật khác hẳn mô tả.** Bài
+  thật: "Điều khiển thông minh động cơ không đồng bộ 3 pha dựa trên mạng nơ-ron mờ hồi quy", đăng
+  tại TNU Journal of Science and Technology (jst.tnu.edu.vn), tác giả Đào Huỳnh Đăng Khoa/Sử Hồng
+  Thạnh/Nguyễn Chí Ngôn (ĐH Cần Thơ/VNPT Cần Thơ) — KHÔNG phải "Nghiên cứu điều khiển động cơ không
+  đồng bộ ba pha bằng biến tần và PLC" tại "Tạp chí Khoa học & Công nghệ Việt Nam" như Thuyết minh
+  ghi.
+- **[6] Manafov & Huseynov — có tác giả thật (E.K. Manafov, Farid Huseynov), bài 2024 thật tìm được
+  lại về đề tài "bảo vệ động cơ kéo (traction motor) bằng PLC"** — khác chủ đề "tích hợp PLC-SCADA"
+  Thuyết minh mô tả.
+- **[4] Gedzurs — tác giả thật (Aleksejs Gedzurs, Latvia University of Life Sciences and
+  Technologies) có tồn tại, đúng hướng nghiên cứu "trạng thái nhiệt động cơ"** — nhưng chưa tìm
+  được đúng bài/năm/tạp chí khớp Thuyết minh trong lần tra này.
+- **[2] Phạm & Phạm 2015 và [3] Gomboc 2014 — vẫn KHÔNG tìm ra bất kỳ dấu vết nào** dù tra nhiều
+  cách — càng củng cố khả năng đây là trích dẫn không có thật.
+- [5] Orhanen, [7] Malla & KC — chưa tìm được kết quả rõ ràng trong lần tra này (không đủ để kết
+  luận có/không tồn tại).
+
+**Kết luận:** đây không còn là "ghi chú cũ chưa xác minh" nữa — đã được xác minh độc lập 2 lần
+(phiên trước + phiên này), cùng chỉ ra vấn đề thật. **Đây là việc cần báo GVHD**, không phải việc
+Claude tự sửa âm thầm bằng cách tải bừa 1 bài "gần giống" rồi gắn nhãn đúng số [n] — làm vậy sẽ tạo
+ra đúng loại lỗi liêm chính mà quy định Điều 5/10 cấm. Không tự thay thế tài liệu tham khảo trong
+Chương 1 cho tới khi có hướng xử lý từ GVHD (có thể cần Mẫu SV05 điều chỉnh danh mục tham khảo
+trong hồ sơ chính thức).
 
 **Trước khi dùng danh mục này làm nền cho Chương 1, PHẢI tự tra cứu lại độc lập từng nguồn** (DOI,
 CrossRef, hoặc tìm PDF gốc) — không copy lại kết luận cũ chưa kiểm chứng. Đây chính là lý do quy

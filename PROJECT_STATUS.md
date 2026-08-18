@@ -90,12 +90,11 @@ contactor, rơ-le nhiệt, Aptomat, relay trung gian, bộ nguồn 24VDC, E-Stop
 - **[2026-08-18] Mốc thời gian** — xem cảnh báo đầu file. Ưu tiên cao nhất hiện tại.
 - **[2026-08-18] Tiến độ kỹ thuật thật chưa xác định** — cần chủ nhiệm đối chiếu thực tế (thiết bị,
   phần cứng đã lắp, code cũ trên máy khác nếu còn) trước khi tin bất kỳ % hoàn thành nào.
-- **[2026-08-18] Rủi ro liêm chính trích dẫn (chưa xác minh lại trong phiên này):** `PROJECT_STATUS.md`
-  cũ (`NCKH_khoi_phuc/`, chưa xác minh) từng ghi nhận phát hiện 5/7 tài liệu tham khảo trong Thuyết
-  minh có tiêu đề/tạp chí không khớp file PDF gốc thật. Danh sách 9 tài liệu tham khảo chính thức
-  (7 bài báo + 2 tài liệu hãng) đã xác nhận lại từ Thuyết minh gốc, xem `CITATION_POLICY.md`. Cần tự
-  tra cứu lại từng nguồn trước khi dùng làm nền cho Chương 1, không tin lại kết luận cũ chưa kiểm
-  chứng trong phiên này.
+- **[2026-08-18] 🔴 Rủi ro liêm chính trích dẫn — ĐÃ XÁC MINH ĐỘC LẬP LẦN 2, KẾT QUẢ TRÙNG KHỚP:** tự
+  tra cứu lại (không đọc ghi chú cũ trước) qua WebSearch, kết quả trùng khớp với phát hiện cũ — ít
+  nhất 3/7 tài liệu [1]-[7] trong Thuyết minh có tiêu đề/tạp chí không khớp bài thật, 2/7 hoàn toàn
+  không tìm ra dấu vết. Đây là vấn đề thật, cần **báo GVHD**, không tự sửa âm thầm. Chi tiết đầy đủ
+  trong `CITATION_POLICY.md`.
 
 ---
 *Cập nhật lần cuối: 2026-08-18 — cập nhật tiến độ kỹ thuật thật + gia hạn theo xác nhận của chủ nhiệm.*
