@@ -10,3 +10,10 @@ Sơ đồ hệ thống: sơ đồ khối tín hiệu, sơ đồ đấu nối đi
   thức)
 - Cần cập nhật sơ đồ để thêm: tiếp điểm phụ E-Stop về DI PLC (fix lỗi tự chạy lại đã phát hiện
   2026-08-18)
+
+## `Dinh_huong_mo_rong_WebSCADA_S71500ao_ChuaDuyetGVHD.txt`
+Định hướng mở rộng kiến trúc (Web SCADA qua API, PLC S7-1500 ảo qua PLCSIM Advanced, Modbus RTU cho
+đồng hồ đo) — **chủ nhiệm xác nhận đây là hướng muốn theo, nhưng CHƯA có xác nhận GVHD bằng văn bản**.
+Đây là thay đổi phạm vi thật so với Thuyết minh gốc — xem chi tiết và bước cần làm trong
+`PROJECT_STATUS.md` mục "Thay đổi phạm vi đang đề xuất". Không dùng làm căn cứ thiết kế chính thức
+cho tới khi có xác nhận.

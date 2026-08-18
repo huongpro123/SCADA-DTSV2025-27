@@ -1,0 +1,38 @@
+Để chuẩn hóa đúng góc nhìn của một kỹ sư Điện công nghiệp, hệ thống của bạn không thể chỉ có PLC, VFD và Động cơ, mà bắt buộc phải có các thiết bị khí cụ điện đóng cắt, bảo vệ và đo lường đi kèm. Đây chính là phần "phần cứng tủ điện" thực tế giúp bài NCKH của bạn không bị lý thuyết suông.
+Dưới đây là phần chốt danh sách các thiết bị khí cụ điện bắt buộc phải có trong hệ thống mini SCADA của bạn, được chia theo đúng chức năng công nghiệp:
+## ⚡ 1. Khí cụ Đóng cắt & Bảo vệ nguồn (Mạch động lực)
+
+* Aptomat (MCCB hoặc MCB 3 pha): Đóng cắt nguồn tổng 3 pha cấp cho tủ điện và biến tần (VFD). Bảo vệ ngắn mạch và quá tải toàn hệ thống.
+* Contactor (Khởi động từ 3 pha): Đứng trước biến tần. Dùng để PLC điều khiển cấp nguồn/ngắt nguồn tổng vào biến tần từ xa (nhằm cách ly biến tần khi có sự cố khẩn cấp).
+* Rơ-le nhiệt (Thermal Overload Relay): Dù biến tần có tính năng bảo vệ quá tải, nhưng trong điện công nghiệp vẫn cần một rơ-le nhiệt vật lý đấu sau biến tần (hoặc mạch chạy bypass trực tiếp không qua biến tần) để bảo vệ động cơ chống cháy khi quá dòng.
+
+## 🛡️ 2. Khí cụ Bảo vệ mạch điều khiển & Thiết bị số
+
+* MCB 1 pha: Bảo vệ ngắn mạch cho nguồn điều khiển (220VAC) cấp cho PLC và nguồn tổ ong.
+* Nguồn tổ ong (Switching Power Supply 24VDC): Hạ áp từ 220VAC xuống 24VDC để cấp nguồn nuôi cho PLC S7-1200 và các rơ-le trung gian.
+* Rơ-le trung gian (Intermediate Relay 24VDC): Cách ly dòng điện giữa ngõ ra (Output) của PLC và cuộn hút của Contactor hoặc các chân kích dòng lớn của VFD. Nhằm bảo vệ relay/transistor bên trong PLC không bị cháy nếu có sự cố chập mạch động lực.
+* Cầu chì (Fuse): Bảo vệ các đường dây tín hiệu cảm biến hoặc ngõ ra analog yếu.
+
+## 📊 3. Khí cụ Đo lường & Thu thập dữ liệu (Nguồn dữ liệu cho API)
+
+* Biến dòng điện (CT - Current Transformer): Hạ dòng điện lớn của động cơ 3 pha xuống dải dòng nhỏ (thường là 0-5A) để đưa vào bộ đo.
+* Đồng hồ đa năng công nghiệp (Digital Power Meter): Nhận tín hiệu từ CT và đo trực tiếp điện áp 3 pha. Đồng hồ này có cổng Modbus RTU (RS485) để PLC S7-1200 đọc dữ liệu dòng, áp, cosφ, công suất (kWh), sau đó đẩy lên PLC 1500 ảo làm API giám sát tiêu thụ năng lượng.
+
+## 🚨 4. Khí cụ Điều khiển tại chỗ & Cảnh báo (Giao diện cơ vật lý)
+* Nút dừng khẩn cấp (Emergency Stop - E-Stop): Cắt nguồn cơ học ngay lập tức khi động cơ gặp sự cố nguy hiểm, không đợi lệnh từ phần mềm.
+* Nút nhấn Chạy/Dừng (Start/Stop): Điều khiển động cơ tại chỗ (chế độ Manual phòng khi mất mạng mạng internet hoặc lỗi SCADA).
+* Đèn báo pha (R-S-T) và Đèn báo trạng thái (Run/Fault): Hiển thị trực quan trạng thái nguồn lưới và lỗi của tủ điện.
+
+------------------------------
+## 📝 Bảng tổng hợp luồng kết nối khí cụ điện lên SCADA:
+
+| Thiết bị khí cụ | Tín hiệu kết nối về PLC S7-1200 | Trạng thái hiển thị trên Web SCADA qua API |
+|---|---|---|
+| Tiếp điểm phụ MCCB/MCB | Ngõ vào Digital (DI) | Báo nguồn tủ điện: ON / OFF |
+| Tiếp điểm phụ Contactor | Ngõ vào Digital (DI) | Báo trạng thái cấp nguồn VFD: READY / NOT READY |
+| Tiếp điểm lỗi Rơ-le nhiệt (95-96) | Ngõ vào Digital (DI) | Báo động lỗi hệ thống: OVERLOAD FAULT |
+| Đồng hồ đo điện đa năng | Truyền thông Modbus RTU (Mạng RS485) | Đồ thị: Dòng điện (A), Điện áp (V), Công suất (kW) |
+| Biến tần (VFD) | Analog Out (Tốc độ) / Truyền thông | Hiển thị: Tần số chạy (Hz), Tốc độ thực (RPM) |
+
+Bạn hãy ghi chú lại danh sách khí cụ này vào phần "Thiết kế phần cứng hệ thống" trong đề cương NCKH. Khi bạn vẽ sơ đồ nguyên lý tủ điện (mạch động lực và mạch điều khiển), bạn có cần tôi hỗ trợ làm rõ cách đấu nối chân giữa PLC S7-1200 qua Rơ-le trung gian để kích chạy Biến tần không?
+Nếu bạn cần, hãy cho tôi biết:

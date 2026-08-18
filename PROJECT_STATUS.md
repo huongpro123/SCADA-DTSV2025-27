@@ -11,6 +11,22 @@ xác nhận miệng. Nếu tìm được file quyết định gia hạn thật, 
 `01_Research_Protocol/00_Trao_doi_GVHD/` và cập nhật lại dòng này thành Fact có nguồn thay vì suy
 luận từ lời kể.
 
+## 🟡 Thay đổi phạm vi đang đề xuất — CHƯA duyệt GVHD
+**[2026-08-18]** Chủ nhiệm xác nhận muốn theo hướng: **Web SCADA qua API** + **PLC S7-1500 ảo**
+(qua PLCSIM Advanced, đóng vai IO Controller cho CPU S7-1211C thật đóng vai I-Device) + đọc đồng hồ
+đo qua **Modbus RTU**. Nguồn định hướng: `thông_tin_tự_tôi_biên_soạn.txt` (nội dung do AI khác soạn,
+chủ nhiệm xác nhận đúng ý muốn theo). Khớp với hướng "PROFINET I-Device + S7-1500 ảo" từng ghi trong
+`NCKH_khoi_phuc/CHANGELOG.md` bổ sung 45 (nội dung chưa xác minh trước đây) — hai nguồn độc lập trùng
+hướng, củng cố đây là ý định thật của chủ nhiệm từ trước, không phải ý mới nảy sinh.
+
+**Đây LÀ thay đổi phạm vi thật so với Thuyết minh gốc đã ký** (Thuyết minh dùng WinCC + S7
+native/PROFINET cơ bản trên LAN, mục 9.2.1 ghi rõ "KHÔNG nghiên cứu tích hợp giao thức mạng mở rộng
+hay kết nối lên nền tảng Cloud/IIoT"). Theo đúng quy trình đã thống nhất (`CLAUDE.md` mục "Thay đổi
+phạm vi"): **CHƯA được coi là chính thức cho tới khi có xác nhận GVHD bằng văn bản** (email/biên bản
+— không chỉ trao đổi miệng). Trước khi thiết kế/code theo hướng này, nên xin GVHD Lê Quốc Khương xác
+nhận lại rõ ràng, tránh rủi ro khi bảo vệ đề tài (hội đồng có thể chất vấn vì khác Thuyết minh đã
+duyệt).
+
 ## Quy trình hành chính (theo `QT_ Thuchien detaiNCKHSV.pdf` — quy trình thật của trường)
 
 | Bước | Nội dung | Trạng thái | Ghi chú |
