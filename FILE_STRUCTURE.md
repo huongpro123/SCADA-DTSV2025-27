@@ -19,7 +19,7 @@ NCKH_Sinh_Viên/                        (gốc repo git)
 │   └── 01_hinh_anh_thiet_bi/           ← ảnh tem máy thiết bị thật
 ├── 05_Simulation/                       ← code TIA Portal, PLC source, project mô phỏng
 ├── 06_Experiment/                       ← tiêu chí đánh giá định lượng, dữ liệu đo thực nghiệm
-├── 08_Thesis/                           ← các chương báo cáo/khóa luận (bản chính thức)
+├── 08_BaoCao/                            ← các chương báo cáo tổng kết đề tài NCKH, Mẫu SV04 (bản chính thức)
 ├── References/
 │   ├── pdf/                            ← toàn văn PDF các tài liệu tham khảo
 │   └── literature_matrix.xlsx
@@ -40,13 +40,13 @@ Số thứ tự khớp với thứ tự các phase làm việc trong `PROJECT_ST
   `Chuong1_Tong_quan_tai_lieu_v3.docx`) — nếu đã commit git đều đặn, không cần đánh version trong
   tên file nữa vì git tự giữ lịch sử, tránh trùng lặp 2 cơ chế versioning
 - Gói file gửi GVHD: đóng trong thư mục con `Goi_gui_YYYY-MM-DD/` dưới
-  `01_Research_Protocol/00_Trao_doi_GVHD/`, không lẫn với bản gốc ở `08_Thesis/`
+  `01_Research_Protocol/00_Trao_doi_GVHD/`, không lẫn với bản gốc ở `08_BaoCao/`
 
 ## Thư mục hiện có nhưng chưa dùng quy ước trên
 - `NCKH_Sinh_Viên/NCKH_Sinh_Viên/` — bản thảo Chương 1-2, danh mục thiết bị, literature matrix cũ.
-  Khi làm việc tiếp với các file này, cân nhắc di chuyển vào đúng cấu trúc mục tiêu ở trên (`08_Thesis/`,
-  `References/`) — nhưng đây là việc cần làm **có chủ đích, thành 1 commit riêng**, không lẫn vào
-  commit khác.
+  Khi làm việc tiếp với các file này, cân nhắc di chuyển vào đúng cấu trúc mục tiêu ở trên
+  (`08_BaoCao/`, `References/`) — nhưng đây là việc cần làm **có chủ đích, thành 1 commit riêng**,
+  không lẫn vào commit khác.
 - `NCKH_khoi_phuc/` — log/ghi chú cũ dựng lại từ trí nhớ hội thoại, không phải cấu trúc chính thức,
   chỉ giữ tham khảo.
 

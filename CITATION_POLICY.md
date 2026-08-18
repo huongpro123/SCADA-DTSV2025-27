@@ -11,11 +11,21 @@ Bài viết Hội thảo khoa học...pdf`, đọc trực tiếp 2026-08-18.*
 4. Trích dẫn từ tài liệu điện tử: phải thể hiện rõ đường liên kết đến đúng nội dung và ngày truy cập
 5. Cam kết trung thực về số liệu, kết quả công bố, và trích nguồn
 
-## Ngưỡng trùng lặp chính thức (Điều 5.1)
-Đồ án/khóa luận tốt nghiệp, luận văn thạc sĩ: mức độ trùng lặp với tài liệu tham khảo **không vượt
-quá 25%** đối với lĩnh vực kỹ thuật công nghệ (đúng ngành của đề tài này). Vi phạm ở mức nghiêm
-trọng hơn (Điều 24.5): đạo văn từ 25% trở lên trong báo cáo nghiệm thu cấp Trường sẽ bị trả hồ sơ,
-yêu cầu viết lại.
+## Ngưỡng trùng lặp chính thức
+
+**Điều khoản áp dụng đúng cho đề tài này (Điều 24.5, Chương V):** đề tài này là "đề tài NCKH sinh
+viên", nộp sản phẩm là **báo cáo tổng kết đề tài** (Mẫu SV04) — không phải đồ án/khóa luận tốt
+nghiệp hay luận văn thạc sĩ (xem xác nhận 2026-08-18, `CLAUDE.md`). Điều 24.5 quy định riêng cho
+"báo cáo nghiệm thu nhiệm vụ khoa học và công nghệ cấp Trường" (đúng loại sản phẩm của đề tài này):
+- Đạo văn (sao chép từ người khác) **từ 25% trở lên**: bị trả hồ sơ, yêu cầu viết lại báo cáo, hạ
+  một bậc khi đánh giá nghiệm thu; tùy mức độ, Hội đồng có thể không chấp nhận, buộc thanh lý nhiệm
+  vụ khoa học công nghệ
+- Tự đạo văn (sao chép lại công trình chính mình đã công bố) **từ 30% trở lên**: cùng mức xử lý
+
+**Điều 5.1 (Chương II — liêm chính trong đào tạo) không áp dụng trực tiếp** cho báo cáo này — điều
+đó quy định riêng cho "đồ án/khóa luận tốt nghiệp, luận văn trình độ thạc sĩ" (≤25% kỹ thuật công
+nghệ, ≤30% lĩnh vực khác), là sản phẩm đào tạo khác với sản phẩm KH&CN của đề tài này. Ghi chú lại
+đây để tránh nhầm lẫn 2 điều khoản khi trích dẫn với GVHD/hội đồng.
 
 ## Nghĩa vụ khai báo khi dùng AI (Điều 17, Chương IV)
 1. Việc dùng AI trong bài viết/nghiên cứu phải minh bạch — **khai báo rõ tỷ lệ nội dung được AI hỗ
@@ -26,8 +36,8 @@ yêu cầu viết lại.
 4. AI chỉ được dùng làm công cụ hỗ trợ ý tưởng, **không thay thế tư duy học thuật độc lập**
 
 → Áp dụng cụ thể: mọi phần nội dung Claude soạn thảo đáng kể (không chỉ sửa câu chữ) trong các
-chương báo cáo/khóa luận phải được khai báo theo điều khoản này trước khi nộp. Xem chi tiết cách
-skill `/human` tương tác với quy định này tại `~/.claude/skills/human/SKILL.md`.
+chương báo cáo tổng kết đề tài phải được khai báo theo điều khoản này trước khi nộp. Xem chi tiết
+cách skill `/human` tương tác với quy định này tại `~/.claude/skills/human/SKILL.md`.
 
 ## Cách trích dẫn (theo Quy định trình bày bài hội thảo — áp dụng tạm thời cho tới khi có mẫu SV04
 chính thức, xem cảnh báo cuối file)
@@ -81,9 +91,9 @@ Mẫu SV05 điều chỉnh danh mục tham khảo trong hồ sơ chính thức.
 ## ⚠️ Gap cần lưu ý — chưa có mẫu báo cáo tổng kết chính thức (SV04)
 Quy định trình bày ở trên là cho **bài hội thảo khoa học**, không phải mẫu báo cáo tổng kết đề tài
 NCKH sinh viên (**Mẫu SV04**, dùng khi nghiệm thu). Chưa tìm thấy/đọc được bản mẫu SV04 thật trong
-các văn bản hiện có — cách trình bày Chương 1, 2... của khóa luận có thể phải tuân theo khuôn mẫu
-SV04 khác với quy định hội thảo này (ví dụ: cách trích dẫn theo số có thể không bắt buộc cho báo cáo
-nội bộ). Cần hỏi GVHD hoặc P.QLKHCN-ĐMST-HTQT để lấy đúng file Mẫu SV04 trước khi chốt định dạng
+các văn bản hiện có — cách trình bày các chương trong báo cáo tổng kết có thể phải tuân theo khuôn
+mẫu SV04 khác với quy định hội thảo này (ví dụ: cách trích dẫn theo số có thể không bắt buộc cho báo
+cáo nội bộ). Cần hỏi GVHD hoặc P.QLKHCN-ĐMST-HTQT để lấy đúng file Mẫu SV04 trước khi chốt định dạng
 cuối cùng cho các chương báo cáo.
 
 *Cập nhật lần cuối: 2026-08-18*

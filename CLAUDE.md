@@ -5,7 +5,8 @@
 (*Three-Phase Induction Motor Control and Monitoring Using a Mini SCADA System*)
 Mã đề tài: **DTSV2025-27**. Thuyết minh gốc đã duyệt: `DTSV2025-27 TM_NCHuong_ThS.LQKhuong hd.pdf`.
 
-Đồ án/khóa luận NCKH sinh viên, phạm vi: PLC Siemens S7-1200, HMI, WinCC, VFD, động cơ 3 pha,
+Đề tài NCKH sinh viên (không phải khóa luận tốt nghiệp — xem xác nhận 2026-08-18), phạm vi: PLC
+Siemens S7-1200, HMI, WinCC, VFD, động cơ 3 pha,
 PROFINET. **Không thuộc phạm vi:** Cloud SCADA, AI, IIoT, Predictive Maintenance — trừ khi GVHD
 xác nhận mở rộng bằng văn bản (xem mục "Thay đổi phạm vi" bên dưới).
 

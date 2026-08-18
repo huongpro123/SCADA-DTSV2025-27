@@ -1,4 +1,4 @@
-# WRITING_GUIDELINES.md — Quy chuẩn viết học thuật cho báo cáo/khóa luận
+# WRITING_GUIDELINES.md — Quy chuẩn viết học thuật cho báo cáo tổng kết đề tài NCKH
 
 *Nguồn chính: `NCKH_Van_ban_trong_truong/04.02.2026_Quy định trình bày Bài viết Hội thảo khoa
 học...pdf`. ⚠️ Đây là quy định cho bài hội thảo, KHÔNG phải mẫu SV04 (báo cáo tổng kết đề tài) —
@@ -31,10 +31,10 @@ thật.*
 - Tiêu đề hình: đặt DƯỚI hình, in đậm, canh giữa, đánh số (Hình 1, Hình 2...)
 - Ghi chú bảng (nếu có): cuối bảng, cỡ chữ 11, canh đều 2 bên
 - Tổng số Hình + Bảng trong 1 bài không vượt quá 10 (quy định hội thảo — có thể không áp dụng cho
-  khóa luận đầy đủ, cần xác nhận với Mẫu SV04 thật)
+  báo cáo tổng kết đề tài đầy đủ, cần xác nhận với Mẫu SV04 thật)
 - Hình vẽ bằng Shape phải chuyển sang Picture trước khi chèn, tránh lệch thứ tự đối tượng
 
-## Cấu trúc nội dung khuyến nghị (theo khung hội thảo, điều chỉnh cho khóa luận)
+## Cấu trúc nội dung khuyến nghị (theo khung hội thảo, điều chỉnh cho báo cáo tổng kết đề tài)
 1. Đặt vấn đề — bối cảnh, thực trạng, tầm quan trọng, tổng quan tài liệu, khoảng trống nghiên cứu,
    mục tiêu; tránh liệt kê/tóm tắt dài dòng nghiên cứu trước
 2. Cơ sở lý thuyết/phương pháp — mô tả đủ chi tiết để người khác có thể áp dụng lại; phương pháp đã
