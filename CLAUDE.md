@@ -73,6 +73,16 @@ ngắn 1-2 dòng để tránh phình to file. Format: `- [ngày] Bài học — 
   che giấu việc AI viết nội dung học thuật đáng kể. Xem chi tiết trong
   `NCKH_Van_ban_trong_truong/2025.597...pdf`. Áp dụng: chỉ dùng `/human` để chỉnh câu chữ cho nội
   dung người dùng đã tự viết; nếu Claude viết mới nội dung học thuật, phải nhắc nghĩa vụ khai báo.
+- [2026-08-18] SAI LẦM: từng khuyên "không cần PR vì làm một mình" khi chưa đọc Thuyết minh gốc.
+  Thuyết minh (DTSV2025-27) liệt kê rõ nhóm 4 sinh viên (Nguyễn Chí Hưỡng chủ nhiệm + Hồ Nguyễn
+  Quốc Anh + Nguyễn Thị Ngọc Hân + Tăng Quốc Huy). Bài học: luôn đọc nguồn chính thức (Thuyết minh
+  gốc) trước khi đưa ra giả định về quy mô/thành viên dự án, đừng suy đoán từ tên thư mục hay ngữ
+  cảnh gián tiếp.
+- [2026-08-18] Thuyết minh gốc ghi thời gian thực hiện 12 tháng, 10/2025–10/2026 — không ghi gia
+  hạn nào. Claim "đã gia hạn 6 tháng, hạn mới 01/2027" chỉ có trong `NCKH_khoi_phuc/` (nội dung
+  dựng lại từ trí nhớ hội thoại, chưa xác minh) — CHƯA có bằng chứng Mẫu SV05 xin gia hạn thật.
+  Trước khi báo cáo mốc thời gian cho người dùng, luôn ưu tiên văn bản gốc, không dùng lại claim
+  từ `NCKH_khoi_phuc/` như sự thật đã xác minh.
 
 ## Việc đầu tiên khi bắt đầu một phiên làm việc
 1. Đọc `CLAUDE.md` (file này).
