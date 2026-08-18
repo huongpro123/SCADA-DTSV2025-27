@@ -1,0 +1,180 @@
+<svg viewBox="0 0 1040 920" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Sơ đồ đấu nối điện chi tiết — mạch động lực + mạch điều khiển</title>
+<desc>Sơ đồ nguyên lý mạch động lực (nguồn 1 pha 220V qua CB tổng, contactor, rơ-le nhiệt, biến tần VNZ100 tới động cơ 3 pha) và mạch điều khiển (E-stop, rơ-le nhiệt NC, relay trung gian, cuộn hút contactor), cùng tín hiệu vào/ra giữa PLC S7-1211C và biến tần/PT100. Dựa trên thiết bị thật đã xác nhận qua ảnh tem máy 2026-08-09/15.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="1040" height="920" fill="#ffffff"/>
+
+<text x="520" y="28" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0C447C">Sơ đồ đấu nối điện chi tiết — DTSV2025-27</text>
+<text x="520" y="46" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#555">Mạch động lực (cam) · Mạch điều khiển (đỏ nhạt) · PLC/tín hiệu (xanh) — cập nhật 2026-08-15</text>
+
+<!-- ============== A. MACH DONG LUC ============== -->
+<text x="20" y="80" font-family="sans-serif" font-size="13" font-weight="bold" fill="#412402">A. Mạch động lực (nguồn 1 pha 220V → động cơ)</text>
+
+<g fill="#FAEEDA" stroke="#854F0B">
+<rect x="20" y="95" width="110" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="75" y="118" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#412402">Nguồn lưới</text>
+<text x="75" y="133" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#854F0B">1 pha 220V (L,N)</text>
+
+<g fill="#FAEEDA" stroke="#854F0B">
+<rect x="160" y="95" width="130" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="225" y="113" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#412402">CB tổng</text>
+<text x="225" y="128" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">CHINT NXB-63H C32</text>
+<text x="225" y="141" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">3 cực — dùng 2 cực (L,N)</text>
+
+<g fill="#FAEEDA" stroke="#854F0B">
+<rect x="330" y="95" width="140" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="400" y="113" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#412402">Contactor</text>
+<text x="400" y="128" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">Mitsubishi S-T12</text>
+<text x="400" y="141" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">3 cực — dùng 1/L1-2/T1, 3/L2-4/T2</text>
+
+<g fill="#FAEEDA" stroke="#854F0B">
+<rect x="510" y="95" width="140" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="580" y="113" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#412402">Rơ-le nhiệt</text>
+<text x="580" y="128" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">Mitsubishi (gắn dưới S-T12)</text>
+<text x="580" y="141" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">Đo dòng ĐẦU VÀO VFD</text>
+
+<g fill="#FAEEDA" stroke="#854F0B">
+<rect x="690" y="88" width="150" height="68" rx="8" stroke-width="1.2"/>
+</g>
+<text x="765" y="106" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#412402">VFD Wecon VNZ100</text>
+<text x="765" y="120" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">1R5G-2 · IN: L1,L2 (1PH 220V)</text>
+<text x="765" y="133" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">OUT: U,V,W (3PH 0-220V)</text>
+<text x="765" y="146" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">1.5kW / ra tối đa 7.0A</text>
+
+<g fill="#FAEEDA" stroke="#854F0B">
+<rect x="890" y="95" width="130" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="955" y="113" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#412402">Động cơ 3 pha</text>
+<text x="955" y="128" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">≤1.5kW, đấu Δ 220V</text>
+<text x="955" y="141" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#854F0B">(theo tiêu chí đã chốt)</text>
+
+<line x1="130" y1="122" x2="158" y2="122" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="290" y1="122" x2="328" y2="122" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="470" y1="122" x2="508" y2="122" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="650" y1="122" x2="688" y2="122" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="840" y1="122" x2="888" y2="122" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="865" y="112" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#333">cáp động lực 3 pha</text>
+
+<!-- ============== B. MACH DIEU KHIEN ============== -->
+<text x="20" y="200" font-family="sans-serif" font-size="13" font-weight="bold" fill="#7A1212">B. Mạch điều khiển cuộn hút contactor (độc lập PLC — an toàn cứng)</text>
+
+<g fill="#FFE9E9" stroke="#B02A2A">
+<rect x="20" y="215" width="110" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="75" y="238" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#7A1212">220V (qua CB</text>
+<text x="75" y="252" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">NXB-63 C6)</text>
+
+<g fill="#FFE9E9" stroke="#B02A2A">
+<rect x="160" y="215" width="130" height="55" rx="8" stroke-width="1.4"/>
+</g>
+<text x="225" y="233" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#7A1212">E-stop</text>
+<text x="225" y="248" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">CHINT NP2 (NC)</text>
+<text x="225" y="261" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">nấm đỏ, tự giữ</text>
+
+<g fill="#FFE9E9" stroke="#B02A2A">
+<rect x="330" y="215" width="150" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="405" y="233" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#7A1212">Tiếp điểm NC</text>
+<text x="405" y="248" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">Rơ-le nhiệt (95-96)</text>
+<text x="405" y="261" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">interlock quá tải</text>
+
+<g fill="#FFE9E9" stroke="#B02A2A">
+<rect x="510" y="215" width="150" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="585" y="233" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#7A1212">Tiếp điểm NO</text>
+<text x="585" y="248" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">Relay HH52P</text>
+<text x="585" y="261" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">(đóng khi PLC ra lệnh)</text>
+
+<g fill="#FFE9E9" stroke="#B02A2A">
+<rect x="700" y="215" width="140" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="770" y="233" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#7A1212">Cuộn hút A1-A2</text>
+<text x="770" y="248" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">Contactor S-T12</text>
+<text x="770" y="261" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#7A1212">200-240V AC</text>
+
+<line x1="130" y1="242" x2="158" y2="242" stroke="#B02A2A" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="290" y1="242" x2="328" y2="242" stroke="#B02A2A" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="480" y1="242" x2="508" y2="242" stroke="#B02A2A" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="660" y1="242" x2="698" y2="242" stroke="#B02A2A" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="770" y1="270" x2="770" y2="290" stroke="#B02A2A" stroke-width="1.5"/>
+<line x1="75" y1="270" x2="75" y2="290" stroke="#B02A2A" stroke-width="1.5"/>
+<line x1="75" y1="290" x2="770" y2="290" stroke="#B02A2A" stroke-width="1.2" stroke-dasharray="3,3"/>
+<text x="420" y="303" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#7A1212">về N — chuỗi nối tiếp: đứt bất kỳ khâu nào (E-stop/quá tải) là cắt cuộn hút ngay, không qua PLC</text>
+
+<!-- ============== C. PLC + TIN HIEU I/O ============== -->
+<text x="20" y="345" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0C447C">C. Tín hiệu vào/ra giữa PLC và VFD/PT100/HH52P</text>
+
+<g fill="#B5D4F4" stroke="#0C447C">
+<rect x="420" y="365" width="200" height="70" rx="10" stroke-width="1.2"/>
+</g>
+<text x="520" y="393" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#042C53">PLC S7-1211C</text>
+<text x="520" y="410" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#0C447C">CPU 1211C AC/DC/Rly</text>
+<text x="520" y="424" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#0C447C">DI/DO/AI tích hợp + CB 1241 (RS485)</text>
+
+<g fill="#E6F1FB" stroke="#185FA5">
+<rect x="70" y="460" width="180" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="160" y="483" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0C447C">Relay HH52P (cuộn hút)</text>
+<text x="160" y="498" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#185FA5">⚠ cần xác nhận điện áp cuộn</text>
+<text x="160" y="509" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#185FA5">hút thật (24VDC hay 220VAC)</text>
+
+<g fill="#E6F1FB" stroke="#185FA5">
+<rect x="70" y="540" width="180" height="50" rx="8" stroke-width="1"/>
+</g>
+<text x="160" y="562" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0C447C">PT100 Transmitter</text>
+<text x="160" y="577" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#185FA5">0-10V → AI tích hợp CPU</text>
+
+<g fill="#E6F1FB" stroke="#185FA5">
+<rect x="790" y="450" width="200" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="890" y="472" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0C447C">VFD — FWD/REV, S1-S4</text>
+<text x="890" y="487" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#185FA5">DO PLC → chạy/dừng/đảo chiều</text>
+
+<g fill="#E6F1FB" stroke="#185FA5">
+<rect x="790" y="520" width="200" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="890" y="542" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0C447C">VFD — 10V/FIV/GND</text>
+<text x="890" y="557" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#185FA5">AQ PLC (0-10V) → tốc độ đặt</text>
+
+<g fill="#E6F1FB" stroke="#185FA5">
+<rect x="790" y="590" width="200" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="890" y="612" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0C447C">VFD — RA/RB/RC</text>
+<text x="890" y="627" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#185FA5">Relay báo lỗi → DI PLC</text>
+
+<g fill="#E6F1FB" stroke="#185FA5">
+<rect x="790" y="660" width="200" height="55" rx="8" stroke-width="1"/>
+</g>
+<text x="890" y="678" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0C447C">VFD — RS-/RS+ (tuỳ chọn)</text>
+<text x="890" y="693" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#185FA5">chung bus CB 1241 với Selec</text>
+<text x="890" y="706" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#185FA5">(chưa dùng trong thiết kế hiện tại)</text>
+
+<line x1="420" y1="410" x2="252" y2="480" stroke="#185FA5" stroke-width="1.2" marker-end="url(#arrow)"/>
+<line x1="252" y1="565" x2="420" y2="415" stroke="#185FA5" stroke-width="1.2" marker-end="url(#arrow)"/>
+<line x1="620" y1="400" x2="788" y2="475" stroke="#185FA5" stroke-width="1.2" marker-end="url(#arrow)"/>
+<line x1="620" y1="410" x2="788" y2="545" stroke="#185FA5" stroke-width="1.2" marker-end="url(#arrow)"/>
+<line x1="788" y1="605" x2="620" y2="420" stroke="#185FA5" stroke-width="1.2" marker-end="url(#arrow)"/>
+<line x1="620" y1="425" x2="788" y2="685" stroke="#185FA5" stroke-width="1" stroke-dasharray="3,3"/>
+
+<!-- ============== D. GHI CHU KY THUAT ============== -->
+<g fill="#FFF8E1" stroke="#B8860B">
+<rect x="20" y="750" width="1000" height="155" rx="8" stroke-width="1"/>
+</g>
+<text x="35" y="772" font-family="sans-serif" font-size="12" font-weight="bold" fill="#7A5C00">Ghi chú kỹ thuật quan trọng (đọc trước khi đấu dây thật):</text>
+<text x="35" y="791" font-family="sans-serif" font-size="10.5" fill="#5C4400">1. Rơ-le nhiệt đặt ở ĐẦU VÀO VFD (giữa contactor và VFD), KHÔNG đặt giữa VFD và động cơ — dòng ra VFD dạng PWM (không sin thuần) khiến rơ-le nhiệt cơ (bimetal) đo sai. Bản thân VFD đã có bảo vệ quá tải điện tử riêng (tham số P814/P816 trong manual VNZ100) cho phía động cơ.</text>
+<text x="35" y="809" font-family="sans-serif" font-size="10.5" fill="#5C4400">2. Contactor Mitsubishi S-T12 là loại 3 cực nhưng VFD chỉ nhận nguồn 1 pha — chỉ dùng 2 trong 3 cực (1/L1-2/T1 và 3/L2-4/T2), cực thứ 3 (5/L3-6/T3) để trống, không đấu.</text>
+<text x="35" y="827" font-family="sans-serif" font-size="10.5" fill="#5C4400">3. CHƯA xác nhận điện áp cuộn hút thật của relay trung gian HH52P (ảnh tem chỉ thấy thông số tiếp điểm 5A 240VAC/28VDC) — PHẢI đo/tra kỹ trước khi đấu vào ngõ ra PLC, sai điện áp cuộn hút có thể cháy relay hoặc PLC không đủ áp kích.</text>
+<text x="35" y="845" font-family="sans-serif" font-size="10.5" fill="#5C4400">4. E-stop CHINT NP2-BE102 hiện chỉ có 1 khối tiếp điểm NC — dùng ưu tiên để cắt cứng mạch cuộn hút contactor (an toàn phần cứng, độc lập PLC). Muốn PLC/HMI/Telegram cũng hiển thị được trạng thái đã nhấn E-stop, cần mua thêm 1 khối tiếp điểm phụ đấu song song về DI riêng.</text>
+<text x="35" y="863" font-family="sans-serif" font-size="10.5" fill="#5C4400">5. Biến áp điều khiển CHINT NDK-250 (chưa vẽ ở đây) có thể chèn giữa nguồn 220V và toàn bộ mạch điều khiển (mục B) để cách ly an toàn — tuỳ chọn thêm, không bắt buộc vì cuộn hút contactor đã chịu được 220V trực tiếp.</text>
+<text x="35" y="881" font-family="sans-serif" font-size="10.5" fill="#5C4400">6. Trước khi cấp điện thật: xả tụ VFD tối thiểu 10 phút sau khi đóng điện lần đầu nếu cần tháo lại (theo cảnh báo an toàn trong manual VNZ100), kiểm tra chiều quay động cơ ở tần số thấp KHÔNG tải trước khi ghép nối cơ khí.</text>
+<text x="35" y="899" font-family="sans-serif" font-size="10.5" fill="#5C4400">7. Còn thiếu để hoàn thiện: nameplate động cơ thật (xác nhận cuối trước khi đấu), đèn báo/còi báo (đã quyết định mua, chưa chọn model cụ thể).</text>
+
+</svg>

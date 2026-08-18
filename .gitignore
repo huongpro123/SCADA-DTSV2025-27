@@ -1,0 +1,11 @@
+# File tạm/khóa của Office khi đang mở
+~$*
+.~lock.*#
+
+# File hệ thống Windows
+Thumbs.db
+desktop.ini
+
+# File tạm chỉnh sửa
+*.tmp
+*.bak
