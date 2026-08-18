@@ -1,39 +1,24 @@
-# Manual thiết bị chính hãng — tự động tải về 2026-08-18
+# Manual thiết bị chính hãng
 
-*Khác với `NCKH_khoi_phuc/References/manuals_thiet_bi/Manual_thiet_bi_da_chon.md` (bản cũ chỉ ghi
-link, chưa tải được file do môi trường không có mạng) — lần này đã tải được file PDF thật, xác minh
-qua `file` (kiểm tra định dạng thật, không chỉ đuôi tên file).*
-
-## Đã tải thành công
+## Đã có
 
 | File | Thiết bị | Nguồn | Trạng thái xác nhận |
 |---|---|---|---|
-| `Siemens_S7-1200_System_Manual` — **chưa tải được, xem bên dưới** | PLC CPU 1211C | support.industry.siemens.com | Model đã xác nhận (Thuyết minh mục 11.1.1) |
-| `Wecon_VNZ100_User_Manual_V3.5.pdf` (41 trang) | Biến tần | ftp.we-con.com.cn (chính hãng) | ⚠️ **Model CHƯA xác nhận** — xem cảnh báo bên dưới |
-| `Selec_MFM383A-C_Datasheet.pdf` (2 trang) | Đồng hồ đo đa năng | tme.eu (nhà phân phối chính hãng) | Model đã xác nhận (Thuyết minh mục 11.1.1) |
+| `Siemens_S7-1200_System_Manual.pdf` | PLC CPU 1211C | support.industry.siemens.com (bạn tự tải, script tự động bị chặn bot) | ✅ Model xác nhận qua ảnh tem máy thật (`04_Hardware/01_hinh_anh_thiet_bi/01_...`) |
+| `Wecon_VNZ100_User_Manual_V3.5.pdf` (41 trang) | Biến tần | ftp.we-con.com.cn (chính hãng) | ✅ **Model VNZ100-1R5G-2 đã xác nhận qua ảnh tem máy thật 2026-08-18** — giải quyết dứt điểm nghi vấn VNZ100 vs VNZ200 |
+| `Selec_MFM383A-C_Datasheet.pdf` (2 trang) | Đồng hồ đo đa năng | tme.eu (nhà phân phối chính hãng) | Model đã xác nhận (Thuyết minh mục 11.1.1) — còn thiếu ảnh tem máy thật |
+| `KHONG_DUNG_INVT_GD35_manual_SAI_thiet_bi.pdf` | ❌ KHÔNG dùng | — | Manual biến tần **INVT GD35, khác hãng hoàn toàn** với Wecon VNZ100 thật đang dùng. Giữ lại chỉ để đối chiếu lịch sử lỗi cũ — đặt tên rõ để không ai nhầm dùng nhầm file này khi thiết kế đấu nối |
 
-## ⚠️ Cảnh báo model biến tần — CẦN BẠN TỰ XÁC NHẬN
-Thuyết minh gốc chỉ ghi "biến tần Wecon", không nêu model cụ thể. File cũ (`Danh_muc_thiet_bi...xlsx`,
-2026-08-08) từng ghi "Wecon VNZ200"; ghi chú khác chưa xác minh trong `NCKH_khoi_phuc/` từng nói đã
-sửa lại thành "VNZ100" sau khi soi tem máy thật. Trong phiên tìm kiếm này:
-- **VNZ100**: có trang chính thức trên `we-con.com.cn` (domain thật của Wecon), tải được manual đầy
-  đủ 41 trang — có vẻ là dòng sản phẩm thật, đang bán chính hãng
-- **VNZ200**: KHÔNG tìm thấy trang nào trên `we-con.com.cn` — chỉ có kết quả từ ManualsLib (bên thứ
-  ba) và một kết quả tên gần giống ("NZ200 Series") lại thuộc **hãng khác hoàn toàn**
-  (whzoncn.com — Wuhu Zhongchen, không phải Wecon)
+## Đã xác nhận qua ảnh tem máy thật (2026-08-18) — xem chi tiết đầy đủ tại `04_Hardware/01_hinh_anh_thiet_bi/README.md`
+Không cần manual PDF riêng (thiết bị đơn giản, thông số đủ đọc từ tem máy): CHINT NDK-250 (biến áp
+điều khiển), CHINT NP2+BE102 (E-Stop), CHINT NXB-63 (Aptomat 3 loại dòng cắt), CNAOM HH52P (relay
+trung gian), Mitsubishi S-T12 + rơ-le nhiệt (contactor), MEAN WELL LRS-200-24 (nguồn 24VDC), CITEL
+DSH63 (SPD), Schneider Easy9 EZ9L33620 (SPD), Weintek eMT3070B (HMI — model + serial khớp chính xác
+ghi chú cũ), 2 loại bộ chuyển đổi PT100 (4-20mA và 0-10V), động cơ VTC Elec (kèm xác nhận đấu
+Δ220V/Y380V).
 
-**→ Bằng chứng nghiêng về VNZ100 là đúng, nhưng đây vẫn chỉ là suy luận từ tìm kiếm web, KHÔNG thay
-thế được việc tự đọc tem máy thật.** Trước khi dùng file manual này để thiết kế đấu nối, tự kiểm tra
-lại tem máy biến tần thật.
+## Còn thiếu hoàn toàn
+- Đồng hồ đo Selec MFM383A-C — chưa có ảnh vật lý tem máy
+- Đèn báo, còi báo, nút Start/Stop — chưa rõ đã mua hay chưa
 
-## Chưa tải được — cần bạn tự tải
-- **Siemens S7-1200 System Manual** — trang `support.industry.siemens.com` có bot protection, script
-  tự động không tải được (lỗi 403). Link xác nhận thật, tự mở bằng trình duyệt và tải về:
-  https://support.industry.siemens.com/cs/attachments/36932465/s71200_system_manual_en-US_en-US.pdf
-
-## Chưa tìm — model chưa chốt, không suy đoán thêm
-- HMI (Thuyết minh không nêu model cụ thể — bản cũ từng chọn Weintek eMT3070P/B nhưng chưa xác nhận
-  lại trong phiên này)
-- Bộ chuyển đổi tín hiệu PT100 (chưa chốt hãng/model)
-- Contactor, rơ-le nhiệt, Aptomat, relay trung gian, bộ nguồn 24VDC, E-Stop (chưa chốt model cụ thể
-  trong Thuyết minh — cần đối chiếu ảnh tem máy thật nếu đã mua)
+*Cập nhật lần cuối: 2026-08-18.*

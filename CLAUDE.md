@@ -84,6 +84,13 @@ ngắn 1-2 dòng để tránh phình to file. Format: `- [ngày] Bài học — 
   dựng lại từ trí nhớ hội thoại, chưa xác minh) — CHƯA có bằng chứng Mẫu SV05 xin gia hạn thật.
   Trước khi báo cáo mốc thời gian cho người dùng, luôn ưu tiên văn bản gốc, không dùng lại claim
   từ `NCKH_khoi_phuc/` như sự thật đã xác minh.
+- [2026-08-18] Cập nhật quan trọng: người dùng tự bổ sung lại 26 ảnh tem máy thiết bị thật +
+  literature_matrix.xlsx (15 nguồn có DOI) + vài PDF gốc — đối chiếu độc lập cho thấy **đại đa số
+  nội dung trong `NCKH_khoi_phuc/` (từng bị coi là "chưa xác minh") khớp chính xác với bằng chứng
+  thật** (model VFD, serial HMI, đấu dây động cơ, DOI tài liệu...). Bài học: "chưa xác minh" không
+  nghĩa là "sai" — vẫn cần cảnh giác/kiểm tra lại, nhưng không nên đánh giá thấp độ tin cậy của nội
+  dung đó chỉ vì nguồn gốc là hội thoại cũ bị mất file. Khi có bằng chứng mới, cập nhật lại đánh giá
+  thay vì giữ nguyên định kiến ban đầu.
 
 ## Việc đầu tiên khi bắt đầu một phiên làm việc
 1. Đọc `CLAUDE.md` (file này).

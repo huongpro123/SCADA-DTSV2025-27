@@ -74,6 +74,15 @@ trong phiên làm việc này, xem cảnh báo bên dưới.*
 9. Selec Controls Pvt. Ltd. *MFM383A-C Multifunction Meter Technical Manual.* Selec Corporation,
    2022.
 
+## Nguồn thay thế đáng tin cậy đã có sẵn — `References/literature_matrix.xlsx`
+File này (được bổ sung lại vào repo 2026-08-18, sống sót từ trước khi mất dữ liệu) chứa **15 nguồn
+lược khảo đầy đủ, mỗi nguồn có DOI**, dùng làm nền cho Chương 1 — rộng hơn 9 mục trích trong Thuyết
+minh ở trên. Đã tự kiểm chứng độc lập 3/15 DOI qua doi.org, cả 3 đúng chính xác tên bài/tác giả/tạp
+chí — **đáng tin cậy hơn nhiều** so với 7 mục trong Thuyết minh gốc ở trên. **Nên ưu tiên dùng matrix
+này khi viết Chương 1**, chỉ dùng 9 mục trong Thuyết minh khi cần trích đúng nguyên văn những gì đã
+nộp trong hồ sơ chính thức. File PDF toàn văn cho 15 nguồn này vẫn cần tải lại — xem
+`References/pdf/README.md`.
+
 ## 🔴 CẢNH BÁO — ĐÃ TỰ XÁC MINH LẠI ĐỘC LẬP 2026-08-18, KẾT QUẢ TRÙNG KHỚP VỚI GHI CHÚ CŨ
 
 `NCKH_khoi_phuc/PROJECT_STATUS.md` (chưa xác minh) từng ghi nhận 5/7 tài liệu [1]-[7] có tác giả

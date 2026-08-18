@@ -52,23 +52,30 @@ Còn 2 vấn đề kỹ thuật thật đang chặn tiến độ — xem mục R
 khác nếu còn...) chưa được đối chiếu đầy đủ — cần chủ nhiệm và các thành viên tiếp tục xác nhận,
 không tự suy đoán thêm ngoài những gì đã báo ở trên.
 
-## Checklist việc cần bổ sung (dựng 2026-08-18, đối chiếu khi có tiến triển)
+## Checklist việc cần bổ sung (dựng 2026-08-18, cập nhật cùng ngày sau khi bạn bổ sung ảnh/PDF)
 Cấu trúc thư mục mục tiêu đã tạo đủ (xem `FILE_STRUCTURE.md`), mỗi thư mục có `README.md` liệt kê
-chi tiết phần thiếu — đây là bản tóm tắt để dễ quét nhanh:
+chi tiết — đây là bản tóm tắt để dễ quét nhanh:
 
-| Thư mục | Đã có | Đang thiếu — cần bạn | Đang thiếu — Claude đã/có thể tự tìm |
-|---|---|---|---|
-| `01_Research_Protocol/00_Trao_doi_GVHD/` | — | Biên bản gia hạn (SV05) thật | — |
-| `03_System_Design/` | Sơ đồ cũ (chưa xác minh) | Xác nhận lại sơ đồ + cập nhật fix E-Stop | — |
-| `04_Hardware/01_hinh_anh_thiet_bi/` | — | **Toàn bộ ảnh tem máy thiết bị thật** (không tìm trên web được) | — |
-| `05_Simulation/` | — | Xác định đúng project TIA Portal thật trong `D:\project tia portal\`, code PLC xử lý E-Stop | — |
-| `06_Experiment/` | — | Bộ tiêu chí định lượng (cần GVHD duyệt), dữ liệu đo thực nghiệm | — |
-| `08_BaoCao/` | Chương 1-2 cũ (cần rà lại) | Mẫu SV04 thật, Chương 3 trở đi | — |
-| `References/pdf/` | — | — | 9 tài liệu tham khảo học thuật [1]-[9] (cần tự tra cứu kỹ vì có tiền sử sai lệch) |
-| `References/pdf/manuals_thiet_bi/` | ✅ VNZ100 (chưa chắc đúng model), Selec MFM383A-C | Xác nhận model VFD qua tem máy | Siemens S7-1200 (link có, tải tay) |
+| Thư mục | Đã có | Đang thiếu |
+|---|---|---|
+| `01_Research_Protocol/00_Trao_doi_GVHD/` | — | Biên bản gia hạn (SV05) thật |
+| `03_System_Design/` | Sơ đồ cũ (nhiều chi tiết đã được ảnh thật xác nhận đúng) | Cập nhật sơ đồ theo fix E-Stop mới |
+| `04_Hardware/01_hinh_anh_thiet_bi/` | ✅ **26 ảnh tem máy thiết bị thật** — gần như toàn bộ danh mục | Selec MFM383A-C, đèn báo/còi báo/nút bấm |
+| `05_Simulation/` | — | Xác định đúng project TIA Portal thật trong `D:\project tia portal\`, code PLC xử lý E-Stop |
+| `06_Experiment/` | — | Bộ tiêu chí định lượng (cần GVHD duyệt), dữ liệu đo thực nghiệm |
+| `08_BaoCao/` | Chương 1-2 cũ (cần rà lại trích dẫn) | Mẫu SV04 thật, Chương 3 trở đi |
+| `References/pdf/` | ✅ 6/15 nguồn Matrix có PDF thật (đã xác minh DOI) | 9 nguồn còn lại, phần lớn cần tài khoản thư viện trường |
+| `References/pdf/manuals_thiet_bi/` | ✅ Siemens S7-1200, Wecon VNZ100 (model đã CHỐT qua ảnh thật), Selec MFM383A-C | — |
 
-**Model chưa chốt — không thể tìm trên web vì chưa biết tìm gì:** HMI, bộ chuyển đổi PT100,
-contactor, rơ-le nhiệt, Aptomat, relay trung gian, bộ nguồn 24VDC, E-Stop, động cơ (hãng cụ thể).
+**[2026-08-18] Đã giải quyết dứt điểm qua ảnh tem máy thật:** model VFD chính xác là **VNZ100-1R5G-2**
+(không phải VNZ200); HMI là **Weintek eMT3070B** (serial 1712100899 khớp chính xác ghi chú cũ); đấu
+dây động cơ **Δ220V/Y380V** xác nhận qua hộp đấu dây; toàn bộ Aptomat/contactor/relay/SPD/nguồn/PT100
+converter đã có ảnh thật, khớp gần như hoàn toàn với `NCKH_khoi_phuc/` (nội dung trước đó bị coi là
+"chưa xác minh") — đây là bằng chứng mạnh cho thấy phần lớn công việc trước khi mất dữ liệu là có
+thật, không phải suy đoán.
+
+**Còn thiếu, chỉ bạn làm được:** Selec MFM383A-C (ảnh), đèn báo/còi báo/nút bấm, xác định đúng
+project TIA Portal thật, gửi code PLC xử lý E-Stop.
 Đây đều là việc chỉ chủ nhiệm/nhóm làm được (đọc tem máy, hoặc quyết định mua nếu chưa có).
 
 ## Việc đang làm (cập nhật liên tục)
