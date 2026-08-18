@@ -61,7 +61,7 @@ chi tiết — đây là bản tóm tắt để dễ quét nhanh:
 | `01_Research_Protocol/00_Trao_doi_GVHD/` | — | Biên bản gia hạn (SV05) thật |
 | `03_System_Design/` | Sơ đồ cũ (nhiều chi tiết đã được ảnh thật xác nhận đúng) | Cập nhật sơ đồ theo fix E-Stop mới |
 | `04_Hardware/01_hinh_anh_thiet_bi/` | ✅ **26 ảnh tem máy thiết bị thật** — gần như toàn bộ danh mục | Selec MFM383A-C, đèn báo/còi báo/nút bấm |
-| `05_Simulation/` | — | Xác định đúng project TIA Portal thật trong `D:\project tia portal\`, code PLC xử lý E-Stop |
+| `05_Simulation/` | ✅ Project TIA Portal `aovathat.ap20` (chủ nhiệm xác nhận đúng bản, 2026-08-18) | Code PLC xử lý E-Stop vẫn đang chờ |
 | `06_Experiment/` | — | Bộ tiêu chí định lượng (cần GVHD duyệt), dữ liệu đo thực nghiệm |
 | `08_BaoCao/` | Chương 1-2 cũ (cần rà lại trích dẫn) | Mẫu SV04 thật, Chương 3 trở đi |
 | `References/pdf/` | ✅ 6/15 nguồn Matrix có PDF thật (đã xác minh DOI) | 9 nguồn còn lại, phần lớn cần tài khoản thư viện trường |
