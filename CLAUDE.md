@@ -68,6 +68,11 @@ ngắn 1-2 dòng để tránh phình to file. Format: `- [ngày] Bài học — 
 - [2026-08-18] Dự án cũ không có git/backup nên mất gần hết dữ liệu khi cài lại Windows — luôn
   thiết lập git + remote GitHub riêng tư ngay từ commit đầu tiên của một dự án mới, không để "làm
   sau".
+- [2026-08-18] Điều 17, Quy định Liêm chính học thuật của trường (QĐ 597/QĐ-ĐHKTCN) bắt buộc khai
+  báo tỷ lệ nội dung được AI hỗ trợ khi nộp bài — không được dùng skill viết-tự-nhiên (`/human`) để
+  che giấu việc AI viết nội dung học thuật đáng kể. Xem chi tiết trong
+  `NCKH_Van_ban_trong_truong/2025.597...pdf`. Áp dụng: chỉ dùng `/human` để chỉnh câu chữ cho nội
+  dung người dùng đã tự viết; nếu Claude viết mới nội dung học thuật, phải nhắc nghĩa vụ khai báo.
 
 ## Việc đầu tiên khi bắt đầu một phiên làm việc
 1. Đọc `CLAUDE.md` (file này).
