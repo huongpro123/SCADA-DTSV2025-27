@@ -91,6 +91,13 @@ ngắn 1-2 dòng để tránh phình to file. Format: `- [ngày] Bài học — 
   nghĩa là "sai" — vẫn cần cảnh giác/kiểm tra lại, nhưng không nên đánh giá thấp độ tin cậy của nội
   dung đó chỉ vì nguồn gốc là hội thoại cũ bị mất file. Khi có bằng chứng mới, cập nhật lại đánh giá
   thay vì giữ nguyên định kiến ban đầu.
+- [2026-08-18] Người dùng cài `headroom-ai` (CLI nén ngữ cảnh token cho AI coding agent, từ
+  github.com/headroomlabs-ai/headroom) qua `uv tool install`, chạy từ `C:\Users\behuo` — **cố ý
+  không cài trong repo đề tài** để tránh lẫn lộn. Đây là công cụ hỗ trợ làm việc (dev tool dùng
+  chung mọi dự án), KHÔNG thuộc nội dung/phạm vi kỹ thuật DTSV2025-27 — không trích dẫn nó trong
+  báo cáo, không tính là "mở rộng phạm vi" cần GVHD duyệt. Áp dụng: có thể dùng nó (vd.
+  `headroom wrap claude`) trong lúc làm việc nếu người dùng bật, nhưng không đọc/tham chiếu code
+  hay README của nó như một nguồn tài liệu học thuật cho đề tài.
 
 ## Việc đầu tiên khi bắt đầu một phiên làm việc
 1. Đọc `CLAUDE.md` (file này).
